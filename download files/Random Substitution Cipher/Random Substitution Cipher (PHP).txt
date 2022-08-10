@@ -1,0 +1,51 @@
+function RandomSubstitutionCipher($plainText){
+    $table_lower = array();
+    $table_upper = array();
+    $key_lower = mt_rand(1, 25);
+    $key_upper = mt_rand(1, 25);
+    $space_count = 0;
+
+    // Setting up the table for lowercase characters
+    for($i = 0; $i < 26; $i++){
+        $temp = ($key_lower++)%26;
+        array_push($table_lower, chr(97+$temp));
+    }
+    // Setting up the table for uppercase characters
+    for($i = 0; $i < 26; $i++){
+        $temp = ($key_upper++)%26;
+        array_push($table_upper, chr(65+$temp));
+    }
+    $temp = 1;
+    for($i = 0; $i < strlen($plainText); $i++){
+        $ascii_plainText = ord($plainText[$i]);
+        if($temp%2 == 0 && $ascii_plainText != 32){
+            if(ctype_upper($plainText[$i])){
+                $plainText[$i] = $table_lower[$ascii_plainText - 65];
+            }
+            else if(ctype_lower($plainText[$i])){ 
+                $plainText[$i] = $table_upper[$ascii_plainText - 97];
+            }
+            $temp++;
+        }
+        else if($temp%2 != 0 && $ascii_plainText != 32){
+            if(ctype_upper($plainText[$i])){
+                $plainText[$i] = $table_upper[$ascii_plainText - 65];
+            }
+            if(ctype_lower($plainText[$i])){
+                $plainText[$i] = $table_lower[$ascii_plainText - 97];
+            }
+            $temp++;
+        }
+        else{
+            $space_count++;
+            if($space_count%2 == 0){
+                $plainText[$i] = '%';
+            }
+            else{
+                $plainText[$i] = '@';
+            }
+            $temp++;
+        }
+    }
+    return $plainText;
+}

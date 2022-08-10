@@ -1,0 +1,52 @@
+string RandomSubstitutionCipher(string plainText){
+    int table_lower[26];
+    $table_upper[26];
+    srand(time(0));
+    int key_lower = rand() % 25 + 1;
+    int key_upper = rand() % 25 + 1;
+    int space_count = 0;
+
+    // Setting up the table for lowercase characters
+    for(int i = 0; i < 26; i++){
+        int temp = (key_lower++)%26;
+        table_lower[i] = char(97+temp);
+    }
+    // Setting up the table for uppercase characters
+    for(int i = 0; i < 26; i++){
+        int temp = (key_upper++)%26;
+        table_upper[i] = char(65+temp);
+    }
+    int temp = 1;
+    for(int i = 0; i < plainText.length(); i++){
+        int ascii_plainText = (int)plainText[i];
+        if(temp%2 == 0 && ascii_plainText != 32){
+            if(isupper(plainText[i])){
+                plainText[i] = table_lower[ascii_plainText - 65];
+            }
+            else if(islower(plainText[i])){ 
+                plainText[i] = table_upper[ascii_plainText - 97];
+            }
+            temp++;
+        }
+        else if(temp%2 != 0 && ascii_plainText != 32){
+            if(isupper(plainText[i])){
+                plainText[i] = table_upper[ascii_plainText - 65];
+            }
+            if(islower(plainText[i])){
+                plainText[i] = table_lower[ascii_plainText - 97];
+            }
+            temp++;
+        }
+        else{
+            space_count++;
+            if(space_count%2 == 0){
+                plainText[i] = '%';
+            }
+            else{
+                plainText[i] = '@';
+            }
+            temp++;
+        }
+    }
+    return plainText;
+}

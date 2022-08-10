@@ -1,0 +1,15 @@
+ function CeaserCipher($plainText){
+    $key = mt_rand(0, 25);
+    for($i = 0; $i < strlen($plainText); $i++){
+        $ascii_plainText = ord($plainText[$i]);
+        $ascii_cipherText = $ascii_plainText + $key;
+        if($ascii_cipherText > 122){
+            $ascii_cipherText -= 122;
+            $plainText[$i] = chr(97+$ascii_cipherText);
+        }
+        else{
+            $plainText[$i] = chr($ascii_cipherText);
+        }       
+    }
+    return $plainText;
+}

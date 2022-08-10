@@ -1,0 +1,24 @@
+string autokey_cipher(string plainText){
+        int key[plainText.length()];
+        // Setting up the base key 
+	srand(time(0));
+        for(int i = 0; i < 10; i++){
+            key[i] = rand() % 25 + 1;
+        }
+        // Adding plainText to complete the key
+        if(plainText.length() > 10){
+            int temp  = plainText.length() - 10;
+            for(int i = 0; temp > 0; i++, temp--){
+                key[i] = int(plainText[i]) - 97;
+            }
+        }
+        // Modigying the plainText like vigenere cipher 
+        for(int i = 0; i < plainText.length(); i++){
+            if(plainText[i] == " "){
+                continue;
+            }
+            int ascii_plainText = int(plainText[i]);
+            plainText[i] = char(((ascii_plainText + key[i]) % 26) + 97);
+        }
+        return plainText;
+    }

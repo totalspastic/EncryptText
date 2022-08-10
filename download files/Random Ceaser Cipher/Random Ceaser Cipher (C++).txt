@@ -1,0 +1,16 @@
+string CeaserCipher(string plainText){
+	srand(time(0));
+	for(int i = 0; i < plainText.length(); i++){
+                int key = rand() % 25 + 1;
+		int ascii_plainText = (int) plainText[i];
+		int ascii_cipherText = (int) ascii_plainText + key;
+		if(ascii_cipherText > 122){
+			ascii_cipherText -= 122;
+			plainText[i] = char(97 + ascii_cipherText);
+		}
+		else{
+			plainText[i] = char(ascii_cipherText);
+		}
+	}
+	return plainText;
+}

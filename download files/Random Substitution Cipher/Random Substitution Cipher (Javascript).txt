@@ -1,0 +1,51 @@
+function RandomSubstitutionCipher($plainText){
+    let table_lower = [];
+    let table_upper = [];
+    let key_lower = Math.floor(Math.random() % 25 + 1);
+    let key_upper = Math.floor(Math.random() % 25 + 1);
+    let space_count = 0;
+
+    // Setting up the table for lowercase characters
+    for(let i = 0; i < 26; i++){
+        temp = (key_lower++)%26;
+        table_lower.push(String.fromCharCode(97+temp));
+    }
+    // Setting up the table for uppercase characters
+    for(let i = 0; i < 26; i++){
+        temp = (key_lower++)%26;
+        table_upper.push(String.fromCharCode(65+temp));
+    }
+    let temp = 1;
+    for(let i = 0; i < plainText.length; i++){
+        let ascii_plainText = plainText[i].charCodeAt();
+        if(temp%2 == 0 && ascii_plainText != 32){
+            if(plainText[i] == plainText[i].toUpperCase()){
+                plainText[i] = table_lower[ascii_plainText - 65];
+            }
+            else if(plainText[i] == plainText[i].toLowerCase()){ 
+                plainText[i] = table_upper[ascii_plainText - 97];
+            }
+            temp++;
+        }
+        else if(temp%2 != 0 && ascii_plainText != 32){
+            if(plainText[i] == plainText[i].toUpperCase()){
+                plainText[i] = table_upper[ascii_plainText - 65];
+            }
+            if(plainText[i] == plainText[i].toLowerCase()){
+                plainText[i] = table_lower[ascii_plainText - 97];
+            }
+            temp++;
+        }
+        else{
+            space_count++;
+            if(space_count%2 == 0){
+                plainText[i] = '%';
+            }
+            else{
+                plainText[i] = '@';
+            }
+            temp++;
+        }
+    }
+    return plainText;
+}

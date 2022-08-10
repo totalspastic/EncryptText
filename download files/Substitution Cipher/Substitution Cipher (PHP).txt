@@ -1,0 +1,22 @@
+function SubstitutionCipher($plainText){
+    $key = mt_rand(1, 25);
+    $table = array();
+    
+    // Making the substitution table 
+    for($i = 0; $i < 26; $i++){
+        $temp = ($key++)%26;
+        array_push($table, chr(97+$temp));
+    }
+    // Replacing the plain text to convert it into cipher text
+    for($i = 0; $i < strlen($plainText); $i++){
+        $ascii_plainText = ord($plainText[$i]);
+        if($ascii_plainText == 32){
+            $plainText[$i] = '%';
+        }
+        else{
+            $table_index = $ascii_plainText - 97;
+            $plainText[$i] = $table[$table_index]; 
+        }
+    }
+    return $plainText;
+}

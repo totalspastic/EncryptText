@@ -1,0 +1,15 @@
+function RandomCeaserCipher(plainText){
+    for(i = 0; i < plainText.length; i++){
+        let key = Math.floor(Math.random() * 25 + 1);
+        let ascii_plainText = plainText.charCodeAt();
+        let ascii_cipherText = ascii_plainText + key;
+        if(ascii_cipherText > 122){
+            ascii_cipherText -= 122;
+            plainText[i] = String.fromCharCode(97 + ascii_cipherText);
+        }
+        else{
+            plainText[i] = String.fromCharCode(ascii_cipherText);
+        }
+    }
+    return plainText;
+}

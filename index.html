@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EncryptText </title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oxygen&family=Staatliches&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c50b62b617.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1><span class="primary-text">Encrypt</span><span class="secondary-text">Text</span></h1>
+            <ul>
+                <li><a href="#main-section">EncryptText</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main id="main-section">
+        <div class="container-small">
+            <form>
+                <div>
+                    <textarea name="plainText" id="plain-text" placeholder="Enter Plain text here"></textarea>
+                    <input type="submit" value="Encrypt" class="btn">
+                    <input type="reset" value="Refresh" class="btn">
+                    <div id="output-section">
+                        <!-- this is where the output will be shown -->
+                    </div>
+                    <div id="choose-option">
+                        <h3>Choose an option for <span class="primary-text">Encryption</span></h3>
+                        <ul>
+                            <li><input type="radio" value="1" name="option" checked> <p>Random Substitution Cipher <a class="download-btn"><i class="fas fa-arrow-down"></i></a></p></li>
+                            <li><input type="radio" value="2" name="option"> <p>Random Ceaser Cipher</p> <a class="download-btn" href="./download files/Random Ceaser Cipher.txt" download="Random Ceaser Cipher.txt"><i class="fas fa-arrow-down"></i></a></li>
+                            <li><input type="radio" value="3" name="option"> <p>Substitution Cipher </p> <a class="download-btn" href="./download files/Substitution Cipher.txt" download="Substitution Cipher.txt"><i class="fas fa-arrow-down"></i></a></li>
+                            <li><input type="radio" value="4" name="option"> <p>Ceaser Cipher</p>  <a class="download-btn" href="./download files/Ceaser Cipher.txt" download="Ceaser Cipher.txt"><i class="fas fa-arrow-down"></i></a></li>
+                            <li><input type="radio" value="5" name="option"> <p>Vigenere Cipher</p>  <a class="download-btn" href="./download files/Ceaser Cipher.txt" download="Ceaser Cipher.txt"><i class="fas fa-arrow-down"></i></a></li>
+                            <li><input type="radio" value="6" name="option"> <p>Autokey Cipher</p>  <a class="download-btn"  href="./download files/Ceaser Cipher.txt" download="Ceaser Cipher.txt"><i class="fas fa-arrow-down"></i></a></li>
+                        </ul>
+                    </div>
+                    <div id="note"> *Random ciphers are the customized variants of the orginal ciphers</div>
+                    <div id="download-section">
+                        <a href="" class="cancel-btn"><i class="fas fa-times fa-2x"></i></a>
+                        <div>
+                            <h3>Choose a <span class="primary-text">Language</span></h3>
+                            <div><input type="radio" value="1" name="language-option"> C++</div>
+                            <div><input type="radio" value="2" name="language-option"> Javascript</div>
+                            <div><input type="radio" value="3" name="language-option"> PHP</div>
+                            <a class="btn-large" id="download-button" href="" download="">Download</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <section id="about">
+        <div>
+            <h1>What is <span><span class="primary-text">Encrypt</span><span class="secondary-text">Text</span></span><span class="italics"> ?</span></h1>
+            <div>
+                <p>
+                    EncryptText is a website that allows the users to enter the any type of text and 
+                    get it processed by our algorithms which results in it to change into cypher text;
+                    making the text unreadable by a third party.
+                </p>
+                <p>
+                    The site is easy to use and is visually pleasing to the eye. 
+                    EncryptText offers multiple options for the user to change their text into different formats. 
+                </p>
+                <p>
+                    Helps the user understand how the encryption occurs by providing the code for the corrosponding algorithm.
+                </p>
+                <p>
+                    The current site lays down the foundation for the full website in which similar functionality 
+                    will be present.
+                </p>
+            </div>
+        </div>
+        <div>
+            <h1><span class="primary-text">Benefits </span>  of using this site</h1>
+            <ul>
+                <li>
+                    <i class="fas fa-angle-right"></i>
+                    <span class="primary-text"> Secures</span> the entered data</li>
+                <li> 
+                    <i class="fas fa-angle-right"></i>
+                    <span class="primary-text">Prevents</span> any other party to look into your data</li>
+                <li>
+                    <i class="fas fa-angle-right"></i> 
+                    <span class="primary-text"> Helps</span> the user better understand the use of encryption
+                    by giving a practical example
+                </li>
+                <li>
+                    <i class="fas fa-angle-right"></i> 
+                    <span class="primary-text">Repository</span> for multiple algorithms that can be used for reference 
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div id="hr1"></div>
+    <section id="members">
+        <p>Who we are</p>
+        <h3>Our Professional Team</h3>
+        <div class="members-info" id="eshaan">
+            <img src="./images/eshaan-3.jpg" alt="Image cannot be loaded">
+            <p id="info-eshaan-btn">Eshaan Bahuguna</p>
+            <p>Full Stack Developer</p>
+        </div>
+        <div class="members-info" id="asmi">
+            <img src="./images/asmi 2.jpeg" alt="Image cannot be loaded">
+            <p id="info-asmi-btn">Asmi Bhardwaj</p>
+            <p>Creative Head</p>
+        </div>
+        <div class="members-info" id="parth">
+            <img src="./images/parth-3 .jpg" alt="Image cannot be loaded">
+            <p id="info-parth-btn">Parth Sarthi Dubey</p>
+            <p>Backend Developer</p>
+        </div>
+        <div class="members-info" id="nabiha">
+            <img src="./images/Nabhiha.jpeg" alt="Image cannot be loaded">
+            <p id="info-nabiha-btn">Nabiha Khan</p>
+            <p>Front End Developer</p>
+        </div>
+        <div class="members-info" id="ayushi">
+            <img src="./images/Ayushi.jpeg" alt="Image cannot be loaded">
+            <p id="info-ayushi-btn">Ayushi Sadani</p>
+            <p>Backend Developer</p>
+        </div>
+        <div id="info-eshaan">
+            <img src="./images/eshaan-3.jpg" alt="Image cannot be loaded">
+            <div>
+                <a href="" class="cancel-btn"><i class="fas fa-times"></i></a>
+                <h1>Co-Founder</h1>
+                <p>
+                    He is the <span class="primary-text">Full Stack Developer</span> overviewing this entire project.
+                </p>
+                <p>
+                    Armed with the knowledge of both Front-end and Back-end, using technologies required for making a website run like
+                    <span class="primary-text">HTML5, CSS3, Javascript, MySQL, PHP</span> and <span class="primary-text">AJAX</span>, he leads the team by solving any bottlenecks 
+                    encounterd by the other members of the team.
+                </p>
+                <p>
+                    Eshaan is the engineer who is involved in both the Front-end as well as the Back-end of this site along with the implementation of the encryption
+                    algorithms.
+                </p>
+            </div>
+        </div>
+        <div id="info-asmi">
+            <img src="./images/asmi 2.jpeg" alt="Image cannot be loaded">
+            <div>
+                <a href="" class="cancel-btn"><i class="fas fa-times"></i></a>
+                <h1>Co-Founder</h1>
+                <p>
+                    She is the <span class="primary-text">Creative Leader </span> of our team.
+                </p>
+                <p>
+                    She is the Front-end Web engineer for this website and is also the creative head for the site EncryptText.
+                    She is motivated to combine the art of design with the art of programming and is passionate about making the web accessible to everyone.
+                </p>
+                <p>
+                    Asmi makes the designs come to life by using a combination of <span class="primary-text"> HTML5, CSS3 </span>and <span class="primary-text">Javascript</span>.
+                    She has contributed to this website by creating the graphic elements for this site and testing its functionality.
+                </p>
+            </div>
+        </div>
+        <div id="info-parth">
+            <img src="./images/parth-3 .jpg" alt="Image cannot be loaded">
+            <div>
+                <a href="" class="cancel-btn"><i class="fas fa-times"></i></a>
+                <h1>Co-Founder</h1>
+                <p>
+                    He is the responsible <span class="primary-text">Back-end engineer</span> of our site.
+                </p>
+                <p>
+                    He is a certified and experienced intern in <span class="primary-text">Ethical Hacking</span> by <span class="primary-text">Internshala</span>.
+                    An intermediate Web platform-based Hacker who is well versed into Vulnerability assessmenet
+                    and solutions and also Penetration testing. <br>
+                    Certified by <span class="primary-text"> Cousera</span> in <span class="primary-text">Blockchain</span> and <span class="primary-text">IOT</span>.
+                </p>
+                <p>
+                    Parth is the Cyber Securtiy overseer and the database manager along with the implementation of encryption 
+                    algorithms for this site.
+                </p>
+            </div>
+        </div>
+        <div id="info-nabiha">
+            <img src="./images/Nabhiha.jpeg" alt="Image cannot be loaded">
+            <div>
+                <a href="" class="cancel-btn"><i class="fas fa-times"></i></a>
+                <h1>Front-end Developer</h1>
+                <p>
+                    She is the <span class="primary-text">head of the Front end department </span> of our team.
+                </p>
+                <p>
+                    She is the Front-end Web engineer for this website and is also the creative head for the site EncryptText.
+                    She is motivated to combine the art of design with the art of programming and is passionate about making the web accessible to everyone.
+                </p>
+                <p>
+                    Nabiha makes the designs come to life by using a combination of <span class="primary-text"> HTML5, CSS3 </span>and <span class="primary-text">Javascript</span>.
+                    She has contributed to this website by creating the graphic elements for this site and testing its functionality.
+                </p>
+            </div>
+        </div>
+        <div id="info-ayushi">
+            <img src="./images/Ayushi.jpeg" alt="Image cannot be loaded">
+            <div>
+                <a href="" class="cancel-btn"><i class="fas fa-times"></i></a>
+                <h1>Back-end Developer</h1>
+                <p>
+                    She is the responsible <span class="primary-text">Back-end engineer</span> of our site.
+                </p>
+                <p>
+                    He is a certified and experienced intern in <span class="primary-text">Ethical Hacking</span> by <span class="primary-text">Internshala</span>.
+                    An intermediate Web platform-based Hacker who is well versed into Vulnerability assessmenet
+                    and solutions and also Penetration testing. <br>
+                    Certified by <span class="primary-text"> Cousera</span> in <span class="primary-text">Blockchain</span> and <span class="primary-text">IOT</span>.
+                </p>
+                <p>
+                    Ayushi is the Cyber Securtiy overseer and the database manager of the website. 
+                </p>
+            </div>
+        </div>
+    </section>
+    <div id="hr2"></div>
+    <section id="user-form">
+        <div>
+            <h1>Want us to add <span> New Algorithms?</span></h1>
+            <p>or</p>
+            <h1>Encountered a <span> Bug?</span></h1>
+            <p>Just let us know by filling the form <i class="fas fa-arrow-alt-circle-right"></i></p>
+        </div>
+        <form>
+            <input type="text" placeholder="Enter email" name="mail">
+            <textarea name="userFeedback" id="user-review" placeholder="Enter text here"></textarea>
+            <input type="submit" value="Submit Review" class="btn">
+            <h3>Your response has been submitted!</h3>
+        </form>
+    </section>
+    <footer id="contact">
+        <div>
+            <div><i class="fas fa-phone-alt fa-2x"></i></div>
+            <h3>Contact us</h3>
+            <ul>
+                <li><i class="fas fa-angle-right"></i> +91 798-2951-689 | Eshaan Bahuguna</li>
+                <li><i class="fas fa-angle-right"></i> +91 935-2163-914 | Parth Sarthi Dubey</li>
+                <li><i class="fas fa-angle-right"></i> +91 945-8305-950 | Asmi Bhardwaj</li>
+            </ul>
+        </div>
+        <div>
+            <div><i class="fas fa-envelope fa-2x"></i></div>
+            <h3>Mail us</h3>
+            <ul>
+                <li><i class="fas fa-angle-right"></i> eshaan.bahuguna2019@vitbhopal.ac.in</li>
+                <li><i class="fas fa-angle-right"></i> parth.sarthi2019@vitbhopal.ac.in</li>
+                <li><i class="fas fa-angle-right"></i> asmi.bhardwaj2019@vitbhopal.ac.in</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="encryptText.js"></script>
+</body>
+</html>
